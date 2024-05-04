@@ -41,5 +41,11 @@ _____
 
 _____
 
-`<Link>` allows you to do client-side navigation with JavaScript.
+`<Link>` allows you to do client-side navigation with JavaScript. Seamless pageloading!
+
+To improve the navigation experience, Next.js automatically code splits your application by route segments. This is different from a traditional React SPA, where the browser loads all your application code on initial load.
+
+Splitting code by routes means that pages become isolated. If a certain page throws an error, the rest of the application will still work.
+
+_____
 
