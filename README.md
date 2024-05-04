@@ -23,3 +23,15 @@ Specify image sizes for different devices.
 Prevent layout shift as the images load.
 Lazy load images that are outside the user's viewport.
 Image Optimization is a large topic in web development that could be considered a specialization in itself.
+
+_____
+
+**Nested Routing**
+Next.js uses file-system routing where folders are used to create nested routes. Each folder represents a route segment that maps to a URL segment.
+
+https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Ffolders-to-url-segments.png&w=3840&q=75
+
+To create a new page, make a folder under `app/`. Inside folder, create a `page.tsx`. Name of page is name of folder.
+
+_____
+
