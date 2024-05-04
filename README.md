@@ -35,3 +35,11 @@ To create a new page, make a folder under `app/`. Inside folder, create a `page.
 
 _____
 
+`/app/layout.tsx` is called a root layout and is required. Any UI you add to the root layout will be shared across all pages in your application. You can use the root layout to modify your <html> and <body> tags, and add metadata (you'll learn more about metadata in a later chapter).
+
+`layout` in other nested folders are glocal
+
+_____
+
+`<Link>` allows you to do client-side navigation with JavaScript.
+
