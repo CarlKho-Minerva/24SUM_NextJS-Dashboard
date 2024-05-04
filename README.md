@@ -50,3 +50,10 @@ Splitting code by routes means that pages become isolated. If a certain page thr
 _____
 
 run `npm i @vercel/postgres` in your terminal to install the Vercel Postgres SDK.
+
+____
+
+What's one advantage of using React Server Components to fetch data?
+> Server components allow you fetch data directly from your database.
+
+____
