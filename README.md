@@ -29,7 +29,7 @@ _____
 **Nested Routing**
 Next.js uses file-system routing where folders are used to create nested routes. Each folder represents a route segment that maps to a URL segment.
 
-https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Ffolders-to-url-segments.png&w=3840&q=75
+![Routing](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Ffolders-to-url-segments.png&w=3840&q=75)
 
 To create a new page, make a folder under `app/`. Inside folder, create a `page.tsx`. Name of page is name of folder.
 
@@ -57,3 +57,13 @@ What's one advantage of using React Server Components to fetch data?
 > Server components allow you fetch data directly from your database.
 
 ____
+
+Network request waterfalls: Sequential vs Parallel
+
+![Network Waterfall](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fsequential-parallel-data-fetching.png&w=1920&q=75)
+
+Right now, it is waterfall. This pattern is not necessarily bad. There may be cases where you want waterfalls because you want a condition to be satisfied before you make the next request. For example, you might want to fetch a user's ID and profile information first. Once you have the ID, you might then proceed to fetch their list of friends. In this case, each request is contingent on the data returned from the previous request.
+
+However, this behavior can also be unintentional and impact performance.
+
+___
