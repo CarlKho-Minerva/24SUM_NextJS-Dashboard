@@ -7,8 +7,8 @@ Next.js App Router course. A simplified version of the financial dashboard that 
 - The ability for users to add, edit, and delete invoices.
 - The dashboard will also have an accompanying database.
 
-The essential skills needed to start building full-stack Next.js applications
 
+### Carl's Notes
 _____
 
 We use clsx to conditionally apply the classes.
@@ -58,6 +58,13 @@ What's one advantage of using React Server Components to fetch data?
 
 ____
 
+Inline SQL syntax
+
+```
+const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
+```
+____
+
 Network request waterfalls: Sequential vs Parallel
 
 ![Network Waterfall](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fsequential-parallel-data-fetching.png&w=1920&q=75)
@@ -66,4 +73,32 @@ Right now, it is waterfall. This pattern is not necessarily bad. There may be ca
 
 However, this behavior can also be unintentional and impact performance.
 
-___
+_____
+
+Static vs Dynamic Rendering
+![Cached Fetching](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fstatic-site-generation.png&w=1920&q=75)
+
+Static rendering is useful for UI with no data or data that is shared across users, such as a static blog post or a product page. It might not be a good fit for a dashboard that has personalized data that is regularly updated.
+
+> I assume lazy load is under `Static`
+
+_____
+
+
+
+_____
+
+
+
+_____
+
+
+
+_____
+
+
+
+_____
+
+
+
