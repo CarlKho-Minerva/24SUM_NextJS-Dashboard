@@ -84,7 +84,11 @@ Static rendering is useful for UI with no data or data that is shared across use
 
 _____
 
+Streaming is a data transfer technique that allows you to break down a route into smaller "chunks" and progressively stream them from the server to the client as they become ready.
 
+![Streamnig](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fserver-rendering-with-streaming.png&w=1920&q=75)
+
+![dataReqs](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fserver-rendering-with-streaming-chart.png&w=1920&q=75)
 
 _____
 
