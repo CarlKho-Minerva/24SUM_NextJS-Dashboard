@@ -92,9 +92,19 @@ Streaming is a data transfer technique that allows you to break down a route int
 
 _____
 
+Route Grouping
+
+!(rgroup)[https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Froute-group.png&w=1920&q=75]
+
+Route groups allow you to organize files into logical groups without affecting the URL path structure. When you create a new folder using parentheses (), the name won't be included in the URL path. So /dashboard/(overview)/page.tsx becomes /dashboard.
+
+Here, you're using a route group to ensure loading.tsx only applies to your dashboard overview page. However, you can also use route groups to separate your application into sections (e.g. (marketing) routes and (shop) routes) or by teams for larger applications.
 
 
 _____
+
+Suspense! **Important**
+!(Fast Loading minus suspense)[https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Floading-revenue-chart.png&w=1080&q=75]
 
 
 
