@@ -135,6 +135,18 @@ via:
 - `useRouter` - Enables navigation between routes within client components programmatically.
 
 `onChange` will invoke handleSearch whenever the input value changes.
+![alt text](image.png)
+
+URLSearchParams is a Web API that provides utility methods for manipulating the URL query parameters. Instead of creating a complex string literal, you can use it to get the params string like `?page=1&query=a`.
+
+**Best Practice: Debouncing**
+> Debouncing is a programming practice that limits the rate at which a function can fire. In our case, you only want to query the database when the user has stopped typing.
+
+How Debouncing Works:
+
+1. Trigger Event: When an event that should be debounced (like a keystroke in the search box) occurs, a timer starts.
+2. Wait: If a new event occurs before the timer expires, the timer is reset.
+3. Execution: If the timer reaches the end of its countdown, the debounced function is executed.
 _____
 
 
