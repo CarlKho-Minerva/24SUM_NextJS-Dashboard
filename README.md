@@ -155,4 +155,24 @@ Security is a top priority for web applications, as they can be vulnerable to va
 
 `progressive enhancement` - forms work even if JavaScript is disabled on the client.
 
+
+> Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
+
+However, in React, the action attribute is considered a special prop - meaning React builds on top of it to allow actions to be invoked.
+
+Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
+
+
+_____
+
+To handle type validation, you have a few options. While you can manually validate types, using a type validation library can save you time and effort. For your example, we'll use [Zod](https://zod.dev), a TypeScript-first validation library that can simplify this task for you.
+
+_____
+
+
+
+_____
+
+
+
 _____
