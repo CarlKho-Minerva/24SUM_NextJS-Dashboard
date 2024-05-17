@@ -260,4 +260,18 @@ export function DeleteInvoice({ id }: { id: string }) {
 
 _____
 
+`error.tsx`
+The error.tsx file can be used to define a UI boundary for a route segment. It serves as a catch-all for unexpected errors and allows you to display a fallback UI to your users. Use instead of red, technical error that disables whole app.
+
+There are a few things you'll notice about the code above:
+
+1. "use client" - error.tsx needs to be a Client Component.
+2. It accepts two props:
+  - error: This object is an instance of JavaScript's native Error object.
+  - reset: This is a function to reset the error boundary. When executed, the function will try to re-render the route segment.
+
+
+`import { notFound } from 'next/navigation';`
+For this, used when a fake UUID is made. That's something to keep in mind, notFound will take precedence over error.tsx, so you can reach out for it when you want to handle more specific errors!
+
 _____
