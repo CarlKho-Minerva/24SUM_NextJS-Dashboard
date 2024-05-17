@@ -171,7 +171,7 @@ _____
 
 Next.js allows you to create Dynamic Route Segments when you don't know the exact segment name and want to create routes based on data. This could be blog post titles, product pages, etc. You can create dynamic route segments by wrapping a folder's name in square brackets. For example, [id], [post] or [slug].
 
-https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fedit-invoice-route.png&w=1920&q=75
+![dynamic](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fedit-invoice-route.png&w=1920&q=75)
 
 _____
 
@@ -275,3 +275,55 @@ There are a few things you'll notice about the code above:
 For this, used when a fake UUID is made. That's something to keep in mind, notFound will take precedence over error.tsx, so you can reach out for it when you want to handle more specific errors!
 
 _____
+
+**Accessibility**
+
+By default, Next.js includes the `eslint-plugin-jsx-a11y` plugin to help catch accessibility issues early. For example, this plugin warns if you have images without alt text, use the `aria-*` and `role` attributes incorrectly, and more.
+
+**Sample output**
+
+```bash
+./app/ui/invoices/table.tsx
+45:25  Warning: Image elements must have an alt prop,
+either with meaningful text, or an empty string for decorative images. jsx-a11y/alt-text
+```
+
+Improving Form Accessibility
+
+We're enhancing form accessibility by:
+
+1. **Semantic HTML**: Using `<input>`, `<option>`, instead of `<div>`. This aids AT in focusing on inputs and providing user context, simplifying navigation and comprehension.
+2. **Labelling**: Utilizing `<label>` and `htmlFor` attribute for descriptive text labels per field. This enhances AT support and usability by enabling label click to focus on the corresponding input.
+3. **Focus Outline**: Styling fields to show an outline when in focus. This is crucial for accessibility as it visually indicates the active element, assisting keyboard and screen reader users.
+
+These practices improve accessibility but don't address form validation and errors."
+
+_____
+
+**Client-Side Validation**
+add <input required>
+
+**Server Validation**
+By validating forms on the server, you can:
+
+- Ensure your data is in the expected format before sending it to your database.
+- Reduce the risk of malicious users bypassing client-side validation.
+- Have one source of truth for what is considered valid data.
+
+
+`safeParse()` will return an object containing either a success or error field. This will help handle validation more gracefully without having put this logic inside the try/catch block.
+
+
+____
+
+## Authentication vs. Authorization
+
+In web development, authentication and authorization have distinct roles:
+
+- **Authentication** verifies a user's identity, typically using credentials like a username and password.
+- **Authorization**, the subsequent step, determines the application areas the authenticated user can access.
+
+In summary, authentication confirms who you are, while authorization decides what you can do or access within the application.
+
+____
+
