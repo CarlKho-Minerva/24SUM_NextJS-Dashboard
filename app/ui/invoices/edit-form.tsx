@@ -10,7 +10,7 @@ import {
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateInvoice } from '@/app/lib/actions';
-import { useFormState } from 'react-dom';
+import { useState } from 'react';
 
 export default function EditInvoiceForm({
   invoice,
@@ -19,12 +19,20 @@ export default function EditInvoiceForm({
   invoice: InvoiceForm;
   customers: CustomerField[];
 }) {
-  const initialState = { message: null, errors: {} };
-  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
-  const [state, dispatch] = useFormState(updateInvoiceWithId, initialState);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const response = await updateInvoice(invoice.id, state, formData);
+
+    if ('errors' in response || 'message' in response) {
+      setState(response as { message: string; errors: { [key: string]: string[] } });
+    } else {
+      // Handle success (e.g., navigate to another page or show a success message)
+    }
+  };
 
   return (
-    <form action={dispatch}>
+    <form onSubmit={handleSubmit}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -83,7 +91,7 @@ export default function EditInvoiceForm({
           </div>
 
           <div id="amount-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.amount &&
+            {(state.errors?.amount as string[]) &&
               state.errors.amount.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
