@@ -336,3 +336,14 @@ Adding the Credentials provider
 Next, you will need to add the providers option for NextAuth.js. providers is an array where you list different login options such as Google or GitHub. For this course, we will focus on using the [Credentials provider](https://authjs.dev/getting-started/providers/credentials) only.
 
 Although we're using the Credentials provider, it's generally recommended to use alternative providers such as OAuth or email providers. See the NextAuth.js docs for a full list of options.
+
+____
+
+Metadata
+
+File-based: Next.js has a range of special files that are specifically used for metadata purposes:
+
+- favicon.ico, apple-icon.jpg, and icon.jpg: Utilized for favicons and icons
+- opengraph-image.jpg and twitter-image.jpg: Employed for social media images
+- robots.txt: Provides instructions for search engine crawling
+- sitemap.xml: Offers information about the website's structure
